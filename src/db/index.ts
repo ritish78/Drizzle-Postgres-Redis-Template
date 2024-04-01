@@ -9,9 +9,8 @@ import {
   POSTGRES_PASSWORD,
   POSTGRES_DATABASE,
   POSTGRES_PORT
-} from "../config/config.ts";
+} from "../config";
 
-// const client: pkg.Client = new Client({ connectionString: POSTGRES_URL });
 const client: pkg.Client =
   process.env.NODE_ENV === "production"
     ? new Client({ connectionString: POSTGRES_URL })
@@ -24,9 +23,18 @@ const client: pkg.Client =
       });
 
 export async function connectToPostgresDB() {
-  await client.connect();
+  try {
+    console.log("Connecting to PostgreSQL. Won't take long!");
+    await client.connect();
+    console.log("Connected to PostgreSQL!");
+  } catch (error) {
+    console.error("Error while connecting to postgress!");
+    process.exit(1);
+  }
 }
 
-connectToPostgresDB();
+// connectToPostgresDB();
 
-export const db = drizzle(client);
+const db = drizzle(client);
+
+export default db;

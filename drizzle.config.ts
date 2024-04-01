@@ -1,12 +1,18 @@
 import type { Config } from "drizzle-kit";
-import { POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DATABASE, POSTGRES_PORT } from "./src/config/config";
+import {
+  POSTGRES_HOST,
+  POSTGRES_USER,
+  POSTGRES_PASSWORD,
+  POSTGRES_DATABASE,
+  POSTGRES_PORT
+} from "./src/config";
 
 export default {
   driver: "pg",
-  schema: "./src/db/schema.ts",
+  schema: "./src/model",
   out: "./src/drizzle",
   dbCredentials: {
-    host: process.env.DB_HOST as string,
+    host: POSTGRES_HOST as string,
     port: POSTGRES_PORT as number,
     user: POSTGRES_USER as string,
     password: POSTGRES_PASSWORD as string,

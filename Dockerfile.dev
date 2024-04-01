@@ -22,7 +22,7 @@ RUN pnpm install
 COPY . .
 
 # Make a non-root user
-RUN adduser -D grihabhoomiuser && echo "grihabhoomiuser:MBrcFRcgHyM/gXTMBjL4CA==" | chpasswd
+#RUN adduser -D grihabhoomiuser && echo "grihabhoomiuser:MBrcFRcgHyM/gXTMBjL4CA==" | chpasswd
 
 # Change to grihabhoomiuser
-USER grihabhoomiuser
+#USER grihabhoomiuser
