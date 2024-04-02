@@ -53,23 +53,17 @@
         "users_id_unique": {
           "name": "users_id_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         },
         "users_email_unique": {
           "name": "users_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         },
         "users_phone_unique": {
           "name": "users_phone_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "phone"
-          ]
+          "columns": ["phone"]
         }
       }
     }

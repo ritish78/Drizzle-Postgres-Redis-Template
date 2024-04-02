@@ -20,12 +20,18 @@ const environmentVariableSchema = z.object({
   POSTGRES_DATABASE: z.string().trim().min(1),
   POSTGRES_PASSWORD: z.string().trim().min(1),
   POSTGRES_USER: z.string().trim().min(1),
+  POSTGRES_POOL_MAX_SIZE: z.number().gte(1),
+  POSTGRES_IDLE_TIMEOUT_IN_MS: z.number().gte(1000),
+  POSTGRES_CONN_TIMEOUT_IN_MS: z.number().gte(1000),
 
   //Redis URL and other environment variables for Redis
   REDIS_URL: z.string().optional(),
   REDIS_HOST: z.string().trim().min(1),
   REDIS_PORT: z.number().positive().int(),
-  // REDIS_SECRET: z.string().trim().min(1),
+  REDIS_SECRET: z.string().optional(),
+  REDIS_MAX_CONNECTION_RETRY: z.number().positive().int(),
+  REDIS_MIN_CONNECTION_DELAY_IN_MS: z.number().positive().int(),
+  REDIS_MAX_CONNECTION_DELAY_IN_MS: z.number().positive().int(),
 
   //JWT and its tokens
   JWT_SECRET: z.string().trim().min(1),

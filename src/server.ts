@@ -15,8 +15,8 @@ const app = express();
 
 import { errorHandler } from "./middleware/errorHandler";
 //Database imports and connect to it
-import { connectToPostgresDB } from "./db";
-connectToPostgresDB();
+// import { connectToPostgresDB } from "./db";
+// connectToPostgresDB();
 redisClient.connect();
 
 declare module "express-session" {

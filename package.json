@@ -6,7 +6,9 @@
   "scripts": {
     "test": "npm run test",
     "dev": "nodemon -L -e ts,js --exec ts-node -r tsconfig-paths/register ./src/index.ts",
+    "bundev": "bun ./src/index.ts",
     "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
     "build": "tsc && tsc-alias",
     "start": "pm2 start ./dist/index.js --no-daemon",
     "migration:generate": "drizzle-kit generate:pg --schema=./src/model",
@@ -26,7 +28,6 @@
     "drizzle-orm": "^0.30.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
-    "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3",
     "postgres": "^3.4.4",
     "redis": "^4.6.13",

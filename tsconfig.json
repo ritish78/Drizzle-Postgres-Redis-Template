@@ -14,5 +14,5 @@
     "target": "es2016",
     "typeRoots": ["node_modules/@types", "src/types"]
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts"]
 }
