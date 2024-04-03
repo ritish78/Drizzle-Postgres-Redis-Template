@@ -23,7 +23,8 @@ export const getUserByEmail = async (email: string) => {
 };
 
 /**
- * @route                 POST /api/v1/auth/register
+ * @route                 /api/v1/auth/register
+ * @method                POST
  * @desc                  Register new user
  * @access                Public
  * @param firstName       string
@@ -65,7 +66,8 @@ export const registerUser = async (
 };
 
 /**
- * @route           POST /api/v1/auth/login
+ * @route           /api/v1/auth/login
+ * @method          POST
  * @desc            Authenticate user
  * @access          Public
  * @param email     string

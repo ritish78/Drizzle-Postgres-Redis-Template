@@ -31,3 +31,12 @@ export const REDIS_MAX_CONNECTION_DELAY_IN_MS = Number(process.env.REDIS_MAX_CON
 export const JWT_SECRET = process.env.JWT_SECRET;
 export const JWT_REFRESH_TOKEN = process.env.JWT_REFRESH_TOKEN;
 export const JWT_ACCESS_TOKEN = process.env.JWT_ACCESS_TOKEN;
+
+//Rate Limit varaibles
+export const WINDOW_SIZE_IN_SECONDS = Number(process.env.WINDOW_SIZE_IN_SECONDS);
+export const MAX_NUMBER_OF_REQUESTS_AUTH_USER_PER_WINDOW_SIZE = Number(
+  process.env.MAX_NUMBER_OF_REQUESTS_AUTH_USER_PER_WINDOW_SIZE
+);
+export const MAX_NUMBER_OF_REQUESTS_NOT_LOGGEDIN_USER_PER_WINDOW_SIZE = Number(
+  process.env.MAX_NUMBER_OF_REQUESTS_NOT_LOGGEDIN_USER_PER_WINDOW_SIZE
+);

@@ -36,7 +36,12 @@ const environmentVariableSchema = z.object({
   //JWT and its tokens
   JWT_SECRET: z.string().trim().min(1),
   JWT_REFRESH_TOKEN: z.string().trim().min(1),
-  JWT_ACCESS_TOKEN: z.string().trim().min(1)
+  JWT_ACCESS_TOKEN: z.string().trim().min(1),
+
+  //Rate limit variables
+  WINDOW_SIZE_IN_SECONDS: z.number().gte(30),
+  MAX_NUMBER_OF_REQUESTS_AUTH_USER_PER_WINDOW_SIZE: z.number().gte(1),
+  MAX_NUMBER_OF_REQUESTS_NOT_LOGGEDIN_USER_PER_WINDOW_SIZE: z.number().gte(1)
 });
 
 /**

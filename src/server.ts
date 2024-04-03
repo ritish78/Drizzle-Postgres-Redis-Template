@@ -14,6 +14,7 @@ import authRoute from "./routes/api/auth";
 const app = express();
 
 import { errorHandler } from "./middleware/errorHandler";
+import rateLimiter from "./middleware/rateLimiter";
 //Database imports and connect to it
 // import { connectToPostgresDB } from "./db";
 // connectToPostgresDB();
@@ -43,6 +44,8 @@ app.use(
     }
   })
 );
+
+app.use(rateLimiter);
 
 app.get("/api/v1/ping", (req, res) => {
   return res.status(200).json({ message: "pong" });

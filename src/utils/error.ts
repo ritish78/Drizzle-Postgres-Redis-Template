@@ -25,6 +25,12 @@ export class BadRequestError extends GenericError {
 
 export class ServerError extends GenericError {
   constructor(message: string) {
-    super("ServerError", 5000, message);
+    super("ServerError", 500, message);
+  }
+}
+
+export class RateLimitError extends GenericError {
+  constructor(message: string) {
+    super("RateLimitError", 429, message);
   }
 }

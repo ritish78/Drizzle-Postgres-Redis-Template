@@ -8,7 +8,8 @@ import { validateRequest } from "src/middleware/validateRequest";
 const router = Router();
 
 /**
- * @route       POST /api/v1/auth/register
+ * @route       /api/v1/auth/register
+ * @method      POST
  * @desc        Register new user
  * @access      Public
  */
@@ -36,7 +37,8 @@ router.route("/register").get((req, res) => {
 });
 
 /**
- * @route       POST /api/v1/auth/login
+ * @route       /api/v1/auth/login
+ * @method      POST
  * @desc        Login user who already have account
  * @access      Public
  */
